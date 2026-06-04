@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel - Academic NFT</title>
+    
+    <!-- External Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ethers/6.12.0/ethers.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1><a href="index.html" class="home-link">Academic NFT</a></h1>
+        </div>
+        <nav class="navbar">
+            <a href="index.html">Home</a>
+            <a href="student.html">Student Portal</a>
+            <a href="admin.html" class="active">Admin Panel</a>
+            <a href="verify.html">Verify</a>
+        </nav>
+        <div class="header-right">
+            <span id="walletAddressDisplay"></span>
+            <button id="connectWalletBtn">Connect Wallet</button>
+        </div>
+    </header>
+
+    <main class="container">
+        <!-- Section 2: Admin Issue Panel -->
+        <section class="card glass" id="adminSection">
+            <h2>Admin Issue Panel</h2>
+            <p>Mint a soulbound certificate to a verified student's wallet.</p>
+            <input type="text" id="adminStudentWallet" placeholder="Student Wallet Address">
+            <input type="text" id="adminStudentName" placeholder="Student Full Name">
+            <input type="text" id="adminRollNumber" placeholder="Roll Number">
+            <input type="text" id="adminDegree" placeholder="Degree (e.g., B.Tech CS)">
+            <input type="text" id="adminYear" placeholder="Graduation Year">
+            <input type="text" id="adminMetadataURI" placeholder="IPFS Metadata URI">
+            <button id="mintCertBtn">Mint Soulbound Certificate</button>
+            <p id="adminStatus" class="status"></p>
+        </section>
+        <!-- Section 3: Admin Revoke Panel -->
+        <section class="card glass" id="revokeSection" style="margin-top: 2rem;">
+            <h2>Revoke Certificate</h2>
+            <p>Revoke a certificate if it was issued by mistake.</p>
+            <input type="text" id="revokeTokenId" placeholder="Certificate Token ID">
+            <input type="text" id="revokeReason" placeholder="Reason for Revocation">
+            <button id="revokeCertBtn" style="background-color: #ef4444;">Revoke Certificate</button>
+            <p id="revokeStatus" class="status"></p>
+        </section>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>

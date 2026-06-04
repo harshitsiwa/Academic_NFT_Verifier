@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Registration - Academic NFT</title>
+    
+    <!-- External Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ethers/6.12.0/ethers.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1><a href="index.html" class="home-link">Academic NFT</a></h1>
+        </div>
+        <nav class="navbar">
+            <a href="index.html">Home</a>
+            <a href="student.html" class="active">Student Portal</a>
+            <a href="admin.html">Admin Panel</a>
+            <a href="verify.html">Verify</a>
+        </nav>
+        <div class="header-right">
+            <span id="walletAddressDisplay"></span>
+            <button id="connectWalletBtn">Connect Wallet</button>
+        </div>
+    </header>
+
+    <main class="container">
+        <!-- Section 1: Student Registration -->
+        <section class="card glass" id="studentSection">
+            <h2>Student Registration</h2>
+            <p>Upload your offline Aadhaar XML ZIP file to verify your identity before certificate issuance.</p>
+            <input type="file" id="aadhaarZipInput" accept=".zip">
+            <input type="password" id="aadhaarShareCode" placeholder="Aadhaar Zip Share Code">
+            <button id="registerBtn">Verify & Register Identity</button>
+            <p id="studentStatus" class="status"></p>
+        </section>
+
+        <!-- Aadhaar XML Download Block -->
+        <section class="card glass" style="margin-top: 2rem;">
+            <a class="cardglass" href="https://tathya.uidai.gov.in/access/login?role=resident" target="_blank" rel="noopener noreferrer" style="word-break: break-all; color: #64b5f6; text-decoration: underline;"> <BUtton> DOWNLOAD XML FILE OF AADHAR </BUtton></a>
+        </section>
+
+        <!-- My Certificates Dashboard -->
+        <section class="card glass" id="dashboardSection" style="margin-top: 2rem; display: none;">
+            <h2>My Digital Certificates</h2>
+            <p style="margin-bottom: 1.5rem;">Below are your highly secure 10-digit Token IDs.</p>
+            <button id="loadCertificatesBtn" style="margin-bottom: 1.5rem;">Refresh My Certificates</button>
+            <p id="dashboardStatus" class="status"></p>
+            <div id="certificatesGrid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.5rem;">
+                <!-- Certificates populated by app.js -->
+            </div>
+        </section>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>

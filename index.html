@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Academic Certificate NFT Platform</title>
+    
+    <!-- External Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ethers/6.12.0/ethers.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1><a href="index.html" class="home-link">Academic NFT</a></h1>
+        </div>
+        <nav class="navbar">
+            <a href="index.html" class="active">Home</a>
+            <a href="student.html">Student Portal</a>
+            <a href="admin.html">Admin Panel</a>
+            <a href="verify.html">Verify</a>
+        </nav>
+        <div class="header-right">
+            <span id="walletAddressDisplay"></span>
+            <button id="connectWalletBtn">Connect Wallet</button>
+        </div>
+    </header>
+
+    <main class="container hero-container">
+        <section class="hero glass text-center">
+            <h1>Immutable Academic Credentials</h1>
+            <p>Welcome to the Academic Certificate NFT Platform. We use soulbound tokens on the Polygon blockchain to securely issue and verify academic identities.</p>
+            
+            <div class="hero-cards">
+                <a href="student.html" class="hero-card glass">
+                    <h3>👨‍🎓 For Students</h3>
+                    <p>Verify your identity via Aadhaar XML and register your wallet.</p>
+                </a>
+                <a href="admin.html" class="hero-card glass">
+                    <h3>🏛️ For Administrators</h3>
+                    <p>Mint soulbound certificates natively to verified students.</p>
+                </a>
+                <a href="verify.html" class="hero-card glass">
+                    <h3>✅ For Employers</h3>
+                    <p>Instantly cryptographically verify credentials.</p>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>
